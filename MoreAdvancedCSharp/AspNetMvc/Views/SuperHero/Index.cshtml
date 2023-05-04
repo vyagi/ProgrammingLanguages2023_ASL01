@@ -1,0 +1,12 @@
+﻿@model List<AspNetMvc.Models.SuperHeroes.SuperHero>
+
+<h3>Superheroes current list</h3>
+<div>
+    <ul>
+        @foreach (var hero in Model)
+        {
+            <li><a asp-controller="SuperHero" asp-action="Details" asp-route-id="@hero.Id">@hero.Name</a> (@hero.Id) is @hero.Age old</li>
+        }
+    </ul>
+</div>
+<a asp-controller="SuperHero" asp-action="Create">Add new hero</a>
